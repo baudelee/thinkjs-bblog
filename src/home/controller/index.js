@@ -205,7 +205,7 @@ export default class extends Base {
     var itemList=await this.model("article").where({item:itemId,ispublished:1}).order("createtime DESC").page(this.get("page"),this.get("pagesize")).select();
     var result = await this.model("article").where({item:itemId,ispublished:1}).order("createtime DESC").page(this.get('page'),this.get('pagezie')).countSelect();
     var Page=think.adapter("template","page");
-    var page new Page(this.http);
+    var page= new Page(this.http);
     var pageData=page.pagination(result);
     if(!this.get("page")){
       return this.redirect("?page=1&[agesize=10");
